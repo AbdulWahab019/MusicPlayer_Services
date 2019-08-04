@@ -1,0 +1,16 @@
+<resources>
+    <string name="app_name">MusicPlayer_Services</string>
+    <string name="select_song">Select Song</string>
+    <string name="selected_file_path">Selected File Path</string>
+    <string name="playlist">Playlist</string>
+    <string name="noSong">No Song Selected</string>
+    <string name="play_pause">Play/Pause</string>
+    <string name="add_song">Add Song</string>
+    <string name="remove_song">Remove Song</string>
+    <string name="previous">Previous</string>
+    <string name="next">Next</string>
+    <string name="mute">Mute</string>
+    <string name="volumeDown">Volume Down</string>
+    <string name="volumeUp">Volume Up</string>
+    <string name="background">Background Image</string>
+</resources>
