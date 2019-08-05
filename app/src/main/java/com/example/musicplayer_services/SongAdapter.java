@@ -19,7 +19,8 @@ public class SongAdapter extends BaseAdapter {
         this.songInformation = LayoutInflater.from(c);
     }
 
-    public void setSongs(ArrayList<Song> songs){ this.songs = songs; }
+    void setSongs(ArrayList<Song> songs){ this.songs = songs; }
+
     @Override
     public int getCount() {
         return songs.size();

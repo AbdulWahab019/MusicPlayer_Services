@@ -1,9 +1,7 @@
 package com.example.musicplayer_services;
 
 import android.annotation.SuppressLint;
-import android.content.ContentValues;
 import android.graphics.Color;
-import android.util.Log;
 import android.widget.Button;
 import android.widget.CompoundButton;
 import android.widget.ImageButton;
@@ -76,7 +74,6 @@ public class MainActivity extends AppCompatActivity implements MediaPlayerContro
         songView.setAdapter(songAdapter);
 
         setController();
-
         onListeners();
     }
 
@@ -207,7 +204,6 @@ public class MainActivity extends AppCompatActivity implements MediaPlayerContro
     }
 
     private void playlistOn(){
-//        getPlaylist();
         songView.setAdapter(null);
 
         addSongPlaylist.setVisibility(View.VISIBLE);
@@ -251,7 +247,6 @@ public class MainActivity extends AppCompatActivity implements MediaPlayerContro
     public void songPicked(View view){
         if(playlistToggle.isChecked() && addButtonPressed){
             index = Integer.parseInt(view.getTag().toString());
-//            addToPlaylist(unPlaylistSongs.get(index));
 
             playlistSongs.add(unPlaylistSongs.get(index));
             unPlaylistSongs.remove(index);
@@ -273,42 +268,6 @@ public class MainActivity extends AppCompatActivity implements MediaPlayerContro
             playButton.setImageResource(R.drawable.pause_icon);
         }
     }
-
-//    private void addToPlaylist(Song song){
-//        ContentResolver resolver = getContentResolver();
-//        long songID = song.getId();
-//        Uri uri = MediaStore.Audio.Playlists.Members.getContentUri("external", 1);
-//        Cursor cursor = resolver.query(uri, new String[] {"count(*)"}, null, null, null);
-//
-//        assert cursor != null;
-//        cursor.moveToFirst();
-//        int last = cursor.getInt(0);
-//        cursor.close();
-//        ContentValues value = new ContentValues();
-//        value.put(MediaStore.Audio.Playlists.Members.PLAY_ORDER, ++last);
-//        value.put(MediaStore.Audio.Playlists.Members.AUDIO_ID, songID);
-//
-//        resolver.insert(uri, value);
-//    }
-
-//    private void getPlaylist(){
-//        Uri uri = MediaStore.Audio.Playlists.Members.getContentUri("external", 1);
-//        ContentResolver resolver = getContentResolver();
-//        String id = MediaStore.Audio.Playlists._ID;
-//        String name = MediaStore.Audio.Playlists.NAME;
-//        String[] columns = { id, name };
-//
-//        Cursor cursor = null;
-//        try {
-//            cursor = resolver.query(uri, columns, null, null, null);
-//            assert cursor != null;
-//            do{
-//                Log.i("Playlist",""+cursor.getColumnIndex(MediaStore.Audio.Playlists._ID));
-//            } while (cursor.moveToNext());
-//        } catch (Exception e){
-//            e.printStackTrace();
-//        }
-//    }
 
     public void getSongList(){
         ContentResolver musicResolver = getContentResolver();
